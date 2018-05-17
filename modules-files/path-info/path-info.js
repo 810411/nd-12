@@ -4,6 +4,7 @@ const conf = {encoding: 'utf8'};
 module.exports = (path, callback) => {
   fs.stat(path, (error, stats) => {
     if (error) return callback(error);
+
     if (stats.isFile()) {
       fs.readFile(path, conf, (err, data) => {
         callback(err, {
@@ -14,6 +15,7 @@ module.exports = (path, callback) => {
         });
       });
     }
+
     if (stats.isDirectory()) {
       fs.readdir(path, (err, files) => {
         callback(err, {
