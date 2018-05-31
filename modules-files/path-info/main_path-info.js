@@ -1,10 +1,7 @@
 const pathInfo = require('./path-info');
 
 function showInfo(err, info) {
-  if (err) {
-    console.log('Возникла ошибка при получении информации');
-    return;
-  }
+  if (err) return console.error(err);
 
   switch (info.type) {
     case 'file':
