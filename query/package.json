@@ -1,0 +1,19 @@
+{
+  "name": " ",
+  "version": "",
+  "private": true,
+  "description": "",
+  "scripts": {
+    "eslint": "eslint js/",
+    "test": "npm run eslint"
+  },
+  "engines": {
+    "node": "6.10"
+  },
+  "devDependencies": {
+    "body-parser": "1.17.2",
+    "eslint": "4.3.0",
+    "express": "4.15.4",
+    "mongodb": "2.2.31"
+  }
+}

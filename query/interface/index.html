@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Домашнее задание к лекции 3.2 «Все, что нужно знать про запросы в MongoDB»</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+<br>
+<div class="container text-center">
+    <div class="jumbotron">
+        <div class="row">
+            <div class="col-xs-6 col-xs-push-6">
+                <div class="form-group">
+                    <textarea class="form-control chat-window" style="resize: none; background: #fff" name="name"
+                              rows="24"
+                              readonly></textarea>
+                </div>
+            </div>
+            <div class="col-xs-6 col-xs-pull-6">
+                <div class="row row-conformity form-group">
+                    <form>
+                        <div class="col-xs-12">
+                            <button class="get-data btn btn-primary btn-lg btn-block">Get all contacts</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="row row-conformity form-group">
+                    <form>
+                        <div class="col-xs-6">
+                            <button class="send-user btn btn-success btn-lg btn-block" type="submit">Add new contact
+                            </button>
+                        </div>
+                        <div class="col-xs-6">
+                            <input class="input-name form-control" type="text" placeholder="Name">
+                            <input class="input-lastname form-control" type="text" placeholder="Lastname">
+                            <input class="input-phone form-control" type="text" placeholder="Phone">
+                        </div>
+                    </form>
+                </div>
+                <div class="row row-conformity form-group">
+                    <form>
+                        <div class="col-xs-6">
+                            <button class="update-user btn btn-info btn-lg btn-block">Edit contact</button>
+                        </div>
+                        <div class="col-xs-6">
+                            <input class="update-id form-control" type="text" placeholder="Enter id to edit contact">
+                            <input class="update-name form-control" type="text" placeholder="Edit name">
+                            <input class="update-lastname form-control" type="text" placeholder="Edit lastname">
+                            <input class="update-phone form-control" type="text" placeholder="Edit phone">
+                        </div>
+                    </form>
+                </div>
+                <div class="row row-conformity form-group">
+                    <form>
+                        <div class="col-xs-6">
+                            <button class="find-user btn btn-warning btn-lg btn-block">Find contact</button>
+                        </div>
+                        <div class="col-xs-6">
+                            <input class="find-name form-control" type="text" placeholder="Name">
+                            <input class="find-lastname form-control" type="text" placeholder="Lastname">
+                            <input class="find-phone form-control" type="text" placeholder="Phone">
+                        </div>
+                    </form>
+                </div>
+                <div class="row row-conformity form-group">
+                    <form>
+                        <div class="col-xs-6">
+                            <button class="delete-user btn btn-danger btn-lg btn-block">Delete contact</button>
+                        </div>
+                        <div class="col-xs-6">
+                            <input class="delete-id form-control" type="text" placeholder="ID">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="index.js" charset="utf-8"></script>
+</body>
+</html>
