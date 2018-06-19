@@ -1,0 +1,53 @@
+<form name="vm.myAccount" ng-show="vm.Form" ng-submit="vm.createUser(vm.User)" novalidate>
+  <div class="form-group">
+
+  <label for="name">Введите имя: </label>
+  <input class="form-control" data-ng-model="vm.User.name" type="text" name="name" id="name" ng-minlength="3" required placeholder="Имя">
+  </div>
+
+  <div ng-messages="vm.myAccount.name.$error" ng-if="vm.myAccount.name.$dirty">
+
+    <div ng-message="required" class="alert alert-danger" role="alert">Имя</div>
+    <div ng-message="minlength" class="alert alert-danger" role="alert">Имя должно содержать не менее трех символов</div>
+
+  </div>
+
+  <div class="form-group">
+
+  <label for="email">Введите email: </label>
+  <input class="form-control" data-ng-model="vm.User.email" type="email" name="email" id="email" required placeholder="email">
+
+  </div>
+
+  <div ng-messages="vm.myAccount.email.$error" ng-if="vm.myAccount.email.$dirty">
+
+    <div ng-message="required" class="alert alert-danger" role="alert">email</div>
+    <div ng-message="email" class="alert alert-danger" role="alert">Некорректный адрес email, проверьте введенные данные</div>
+
+  </div>
+
+
+  <div class="form-group">
+
+  <label for="phone">Введите номер телефона: </label>
+  <input class="form-control" data-ng-model="vm.User.phone" ng-pattern="/[0-9+-]$/" type="text" name="phone" id="phone" placeholder="телефон">
+
+  </div>
+
+  <div ng-messages="vm.myAccount.phone.$error" ng-if="vm.myAccount.phone.$dirty">
+
+    <div ng-message="pattern" class="alert alert-danger" role="alert">Некорректный номер телефона, проверьте введенные данные</div>
+
+  </div>
+  <button class="btn btn-default" data-ng-disabled="vm.myAccount.$invalid">Отправить</button>
+</form>
+
+<div class="list-group" ng-show="vm.LoggedIn">
+  <h3>User: </h3>
+  <div class="list-group-item" ng-repeat="field in vm.getUser()">
+    <div>
+      {{field}}
+    </div>
+  </div>
+  <button ng-click="vm.logOut()">Выйти</button>
+</div>

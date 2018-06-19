@@ -1,0 +1,14 @@
+<div class="panel panel-default">
+    <div class="panel-body">
+
+        <div class="btn-group" role="group" data-ng-repeat="menuItem in vm.menuList">
+            <a class="btn btn-default" ui-sref="{{menuItem.sref}}" ui-sref-active="btn-success">{{menuItem.text}}</a>
+        </div>
+
+    </div>
+</div>
+<shopping-cart-component></shopping-cart-component>
+<ui-view></ui-view>
+
+
+
