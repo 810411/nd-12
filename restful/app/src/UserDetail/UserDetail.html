@@ -1,0 +1,47 @@
+
+<div class="alert alert-danger" role="alert" ng-if="notfoundError">Пользователь не найден</div>
+
+<div class="row">
+        <div ng-if="!userLoaded">
+            <span class="glyphicon glyphicon-refresh"></span>
+            Loading...
+        </div>
+    <div class="col-md-4" ng-if="userLoaded">
+
+        <h1 class="media-heading">{{user.username | uppercase }}</h1>
+        <p>
+            {{user.name}}</p>
+
+        <button class="btn btn-danger" ng-click="deleteUser(user.id)">
+            <span class="glyphicon glyphicon-trash"></span>
+            Удалить
+        </button>
+        <a class="btn btn-primary" href="#!/edit/{{user.id}}">
+            Редактировать
+        </a>
+
+    </div>
+    
+    <div ng-if="!postsLoaded">
+        <span class="glyphicon glyphicon-refresh"></span>
+        Loading...
+    </div>
+
+    <div class="col-md-8" ng-if="postsLoaded">
+            <div class="alert alert-danger" role="alert" ng-if="noPostsError">У данного пользователя сообщения отсутствуют</div>
+        <div class="list-group">
+            <div class="list-group-item" ng-repeat="singlePost in posts">
+    
+                <p>
+                    {{singlePost.title }}
+                </p>
+    
+                </a>
+            </div>
+    
+        </div>
+    </div>
+</div>
+
+<div class="alert alert-success" role="alert" ng-if="deletionSuccess">Пока, пользователь!</div>
+<div class="alert alert-danger" role="alert" ng-if="deletionError">Пользователи не сдаются!</div>
