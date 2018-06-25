@@ -6,6 +6,7 @@ const readData = (pathName) => {
     fs.readdir(pathName, (err, files) => {
       if (err) {
         error(err);
+        return;
       }
       done(files);
     });
@@ -17,6 +18,7 @@ const getText = (file) => {
     fs.readFile(file, conf, (err, data) => {
       if (err) {
         error(err);
+        return;
       }
       done({name: file, content: data});
     });
